@@ -1,0 +1,1111 @@
+/* ================================================================
+ * Mellow UI — Design Tokens
+ * ================================================================
+ *
+ * 3層構造:
+ *   L1 Primitive   標準（色・スケール）
+ *   L2 Semantic    目的（背景・テキスト・操作）
+ *   L3 Component   部品（65個 / コーポレート角丸 / ダーク対応）
+ *
+ * アクセシビリティ:
+ *   - WCAG 2.1 AA のコントラスト比
+ *   - focus-visible: インタラクティブ要素には 2px以上のリング
+ *
+ * ================================================================ */
+
+:root {
+
+  /* ================================================================
+   * L1: PRIMITIVE TOKENS
+   * ================================================================ */
+
+  /* --- Color: Teal --- */
+  --color-teal-50:  #EEF3FC;
+  --color-teal-100: #E3EDFB;
+  --color-teal-200: #BCD0F4;
+  --color-teal-300: #7BA3E5;
+  --color-teal-400: #4D80D6;
+  --color-teal-500: #1E5FBF;
+  --color-teal-600: #1A4FA8;
+  --color-teal-700: #1543A0;
+  --color-teal-800: #103588;
+  --color-teal-900: #0C2A6B;
+
+  /* --- Color: Peach --- */
+  --color-peach-50:  #FFF1EC;
+  --color-peach-100: #FFD9CC;
+  --color-peach-200: #FFBBA3;
+  --color-peach-300: #FFA081;
+  --color-peach-400: #FF9472;
+  --color-peach-500: #F87B57;
+  --color-peach-600: #DC623F;
+  --color-peach-700: #B14B2E;
+  --color-peach-800: #82351F;
+  --color-peach-900: #561F11;
+
+  /* --- Color: Sunshine --- */
+  --color-sunshine-50:  #FFF8E1;
+  --color-sunshine-100: #FFEAA7;
+  --color-sunshine-300: #FFD66B;
+  --color-sunshine-500: #FFCB47;
+  --color-sunshine-700: #C99613;
+
+  /* --- Color: Warm Gray --- */
+  --color-warm-0:   #FFFFFF;
+  --color-warm-25:  #FBFAF8;
+  --color-warm-50:  #F6F4F1;
+  --color-warm-100: #ECE9E4;
+  --color-warm-200: #D8D3CC;
+  --color-warm-300: #B3ACA3;
+  --color-warm-400: #75675C;
+  --color-warm-500: #6B6560;
+  --color-warm-600: #4D4844;
+  --color-warm-700: #34302D;
+  --color-warm-800: #1F1C1A;
+  --color-warm-900: #100E0D;
+
+  /* --- Color: State (10階調) --- */
+  --color-success-50:  #E5F5EB;
+  --color-success-100: #C2E7D0;
+  --color-success-500: #5DBB7E;
+  --color-success-600: #4DA269;
+  --color-success-700: #2A7A4A;
+  --color-success-900: #143D24;
+
+  --color-warning-50:  #FEF3DC;
+  --color-warning-100: #FCE3AE;
+  --color-warning-500: #F0A933;
+  --color-warning-600: #D08D1F;
+  --color-warning-700: #875A0A;
+  --color-warning-900: #4A3105;
+
+  --color-error-50:  #FCE7E7;
+  --color-error-100: #F8C7C7;
+  --color-error-500: #E36363;
+  --color-error-600: #C44A4A;
+  --color-error-700: #A82A2A;
+  --color-error-800: #7A1F1F;
+  --color-error-900: #5C1414;
+
+  --color-info-50:  #EEF3FC;
+  --color-info-500: #1E5FBF;
+  --color-info-700: #1543A0;
+
+  /* --- Typography --- */
+  --font-display: "Zen Maru Gothic", "Hiragino Maru Gothic ProN",
+                  "M PLUS Rounded 1c", sans-serif;
+  --font-body:    "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+                  "Yu Gothic", sans-serif;
+  --font-en:      "DM Sans", "Outfit", sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", monospace;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  --fs-2xs:  10px;
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-base: 16px;
+  --fs-md:   18px;
+  --fs-lg:   20px;
+  --fs-xl:   24px;
+  --fs-2xl:  30px;
+  --fs-3xl:  38px;
+  --fs-4xl:  48px;
+  --fs-5xl:  60px;
+  --fs-6xl:  76px;
+
+  --lh-tight:   1.25;
+  --lh-snug:    1.45;
+  --lh-normal:  1.8;
+  --lh-loose:   2.0;
+
+  --ls-tight:  -0.02em;
+  --ls-normal: 0;
+  --ls-wide:   0.04em;
+  --ls-wider:  0.12em;
+
+  /* --- Spacing (4px grid) --- */
+  --space-px:  1px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32: 128px;
+  --space-40: 160px;
+
+  /* --- Radius --- */
+  --radius-none: 0;
+  --radius-xs:   0px;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   6px;
+  --radius-xl:   8px;
+  --radius-2xl:  12px;
+  --radius-pill: 9999px;
+
+  /* --- Shadow --- */
+  --shadow-xs:         0 1px 2px rgba(45, 35, 25, 0.05);
+  --shadow-sm:         0 4px 12px rgba(45, 35, 25, 0.06);
+  --shadow-md:         0 8px 24px rgba(45, 35, 25, 0.08);
+  --shadow-lg:         0 16px 40px rgba(45, 35, 25, 0.10);
+  --shadow-xl:         0 32px 64px rgba(45, 35, 25, 0.14);
+  --shadow-2xl:        0 48px 96px rgba(45, 35, 25, 0.18);
+  --shadow-glow:       0 8px 32px rgba(248, 123, 87, 0.25);
+  --shadow-glow-hover: 0 12px 40px rgba(248, 123, 87, 0.40);
+  --shadow-inset:      inset 0 2px 4px rgba(45, 35, 25, 0.06);
+
+  /* --- Focus Ring --- */
+  --focus-ring-width:  3px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color:  rgba(30, 95, 191, 0.5);
+  --focus-ring:        0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+
+  /* --- Motion --- */
+  --dur-fast:    180ms;
+  --dur-base:    280ms;
+  --dur-slow:    480ms;
+  --dur-slower:  640ms;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Z-Index Scale --- */
+  --z-hide:       -1;
+  --z-base:        0;
+  --z-raised:      1;
+  --z-sticky:    100;
+  --z-dropdown:  200;
+  --z-overlay:  1000;
+  --z-modal:    1100;
+  --z-popover:  1200;
+  --z-tooltip:  1300;
+  --z-toast:    1400;
+
+
+  /* ================================================================
+   * L2: SEMANTIC TOKENS
+   * ================================================================ */
+
+  /* --- Background --- */
+  --bg-canvas:           var(--color-warm-0);
+  --bg-subtle:           var(--color-warm-25);
+  --bg-muted:            var(--color-warm-50);
+  --bg-emphasized:       var(--color-warm-100);
+  --bg-brand:            var(--color-teal-50);
+  --bg-brand-emphasized: var(--color-teal-100);
+  --bg-warm:             var(--color-peach-50);
+  --bg-inverse:          var(--color-teal-900);
+  --bg-overlay:          rgba(20, 30, 50, 0.5);
+
+  /* --- Text --- */
+  --text-primary:          var(--color-warm-800);
+  --text-secondary:        var(--color-warm-600);
+  --text-tertiary:         var(--color-warm-400);
+  --text-disabled:         var(--color-warm-300);
+  --text-inverse:          var(--color-warm-0);
+  --text-brand:            var(--color-teal-700);
+  --text-brand-emphasized: var(--color-teal-800);
+  --text-accent:           var(--color-peach-700);
+  --text-link:             var(--color-teal-600);
+  --text-link-hover:       var(--color-teal-700);
+
+  /* --- Border --- */
+  --border-subtle:    var(--color-warm-100);
+  --border-default:   var(--color-warm-200);
+  --border-strong:    var(--color-warm-300);
+  --border-brand:     var(--color-teal-300);
+  --border-accent:    var(--color-peach-300);
+  --border-disabled:  var(--color-warm-200);
+
+  /* --- Action --- */
+  --action-primary:        var(--color-teal-500);
+  --action-primary-hover:  var(--color-teal-600);
+  --action-primary-active: var(--color-teal-700);
+  --action-cta:            var(--color-peach-700);
+  --action-cta-hover:      var(--color-peach-800);
+  --action-cta-active:     var(--color-peach-900);
+  --action-disabled-bg:    var(--color-warm-200);
+  --action-disabled-text:  var(--color-warm-400);
+
+  /* --- State Backgrounds --- */
+  --state-success-bg:    var(--color-success-50);
+  --state-success-fg:    var(--color-success-700);
+  --state-success-solid: var(--color-success-700);
+  --state-warning-bg:    var(--color-warning-50);
+  --state-warning-fg:    var(--color-warning-700);
+  --state-warning-solid: var(--color-warning-700);
+  --state-error-bg:      var(--color-error-50);
+  --state-error-fg:      var(--color-error-700);
+  --state-error-solid:   var(--color-error-700);
+  --state-info-bg:       var(--color-info-50);
+  --state-info-fg:       var(--color-info-700);
+  --state-info-solid:    var(--color-info-700);
+
+
+  /* ================================================================
+   * L3: COMPONENT TOKENS
+   * ================================================================ */
+
+  /* ============================================================
+   * Form Components
+   * ============================================================ */
+
+  /* --- Button: CTA --- */
+  --btn-cta-bg:            var(--action-cta);
+  --btn-cta-bg-hover:      var(--action-cta-hover);
+  --btn-cta-bg-active:     var(--action-cta-active);
+  --btn-cta-bg-disabled:   var(--action-disabled-bg);
+  --btn-cta-text:          var(--text-inverse);
+  --btn-cta-text-disabled: var(--action-disabled-text);
+  --btn-cta-shadow:        var(--shadow-glow);
+  --btn-cta-shadow-hover:  var(--shadow-glow-hover);
+  --btn-cta-radius:        var(--radius-md);
+  --btn-cta-padding-x:     var(--space-8);
+  --btn-cta-padding-y:     var(--space-4);
+  --btn-cta-font-size:     var(--fs-md);
+  --btn-cta-font-weight:   var(--fw-bold);
+
+  /* --- Button: Primary --- */
+  --btn-primary-bg:           var(--action-primary);
+  --btn-primary-bg-hover:     var(--action-primary-hover);
+  --btn-primary-bg-active:    var(--action-primary-active);
+  --btn-primary-text:         var(--text-inverse);
+  --btn-primary-radius:       var(--radius-sm);
+  --btn-primary-padding-x:    var(--space-6);
+  --btn-primary-padding-y:    var(--space-3);
+
+  /* --- Button: Outline --- */
+  --btn-outline-bg:           transparent;
+  --btn-outline-bg-hover:     var(--bg-brand);
+  --btn-outline-text:         var(--text-brand);
+  --btn-outline-border:       var(--color-teal-300);
+  --btn-outline-border-hover: var(--color-teal-500);
+
+  /* --- Button: Ghost --- */
+  --btn-ghost-bg:        transparent;
+  --btn-ghost-bg-hover:  var(--bg-brand);
+  --btn-ghost-text:      var(--text-brand);
+
+  /* --- Button: Danger --- */
+  --btn-danger-bg:       var(--color-error-700);
+  --btn-danger-bg-hover: var(--color-error-800);
+  --btn-danger-text:     var(--text-inverse);
+
+  /* --- Input --- */
+  --input-bg:            var(--bg-canvas);
+  --input-bg-disabled:   var(--bg-muted);
+  --input-text:          var(--text-primary);
+  --input-text-disabled: var(--text-disabled);
+  --input-placeholder:   var(--text-tertiary);
+  --input-border:        var(--border-default);
+  --input-border-hover:  var(--border-strong);
+  --input-border-focus:  var(--color-teal-500);
+  --input-border-error:  var(--color-error-500);
+  --input-radius:        var(--radius-md);
+  --input-padding-x:     var(--space-4);
+  --input-padding-y:     var(--space-3);
+  --input-font-size:     var(--fs-base);
+  --input-shadow-focus:  0 0 0 4px rgba(30, 95, 191, 0.12);
+  --input-shadow-error:  0 0 0 4px rgba(227, 99, 99, 0.12);
+
+  /* --- Textarea --- */
+  --textarea-min-height: 96px;
+  --textarea-padding:    var(--space-3) var(--space-4);
+
+  /* --- Select --- */
+  --select-bg:          var(--bg-canvas);
+  --select-padding-x:   var(--space-4);
+  --select-padding-y:   var(--space-3);
+  --select-arrow-color: var(--text-tertiary);
+
+  /* --- Checkbox / Radio --- */
+  --check-size:           20px;
+  --check-bg:             var(--bg-canvas);
+  --check-bg-checked:     var(--action-primary);
+  --check-border:         var(--border-strong);
+  --check-border-checked: var(--action-primary);
+  --check-mark-color:     var(--text-inverse);
+
+  /* --- Switch --- */
+  --switch-track-w:      44px;
+  --switch-track-h:      24px;
+  --switch-thumb-size:   18px;
+  --switch-track-bg:     var(--color-warm-300);
+  --switch-track-bg-on:  var(--action-primary);
+  --switch-thumb-bg:     var(--bg-canvas);
+  --switch-thumb-shadow: var(--shadow-sm);
+
+  /* --- Slider --- */
+  --slider-track-h:      6px;
+  --slider-track-bg:     var(--bg-emphasized);
+  --slider-fill-bg:      var(--action-primary);
+  --slider-thumb-size:   20px;
+  --slider-thumb-bg:     var(--bg-canvas);
+  --slider-thumb-border: var(--action-primary);
+
+  /* ============================================================
+   * Information Display
+   * ============================================================ */
+
+  /* --- Badge --- */
+  --badge-radius:         var(--radius-pill);
+  --badge-padding-x:      var(--space-3);
+  --badge-padding-y:      var(--space-1);
+  --badge-font-size:      var(--fs-xs);
+  --badge-font-weight:    var(--fw-bold);
+  --badge-accent-bg:      var(--color-peach-50);
+  --badge-accent-text:    var(--color-peach-700);
+  --badge-primary-bg:     var(--color-teal-50);
+  --badge-primary-text:   var(--color-teal-700);
+  --badge-highlight-bg:   var(--color-sunshine-100);
+  --badge-highlight-text: #7A5300;
+  --badge-success-bg:     var(--state-success-bg);
+  --badge-success-text:   var(--state-success-fg);
+  --badge-error-bg:       var(--state-error-bg);
+  --badge-error-text:     var(--state-error-fg);
+  --badge-neutral-bg:     var(--bg-emphasized);
+  --badge-neutral-text:   var(--text-secondary);
+
+  /* --- Tag --- */
+  --tag-bg:                var(--bg-emphasized);
+  --tag-text:              var(--text-primary);
+  --tag-radius:            var(--radius-md);
+  --tag-padding-x:         var(--space-3);
+  --tag-padding-y:         var(--space-1);
+  --tag-close-color:       var(--text-tertiary);
+  --tag-close-color-hover: var(--text-primary);
+
+  /* --- Avatar --- */
+  --avatar-size-sm:   32px;
+  --avatar-size-md:   48px;
+  --avatar-size-lg:   64px;
+  --avatar-size-xl:   96px;
+  --avatar-bg:        var(--color-teal-100);
+  --avatar-text:      var(--color-teal-700);
+  --avatar-border:    var(--bg-canvas);
+  --avatar-radius:    var(--radius-pill);
+
+  /* --- Tooltip --- */
+  --tooltip-bg:           var(--color-warm-800);
+  --tooltip-text:         var(--text-inverse);
+  --tooltip-radius:       var(--radius-sm);
+  --tooltip-padding-x:    var(--space-3);
+  --tooltip-padding-y:    var(--space-2);
+  --tooltip-font-size:    var(--fs-sm);
+  --tooltip-shadow:       var(--shadow-md);
+  --tooltip-arrow-size:   6px;
+
+  /* --- Alert  --- */
+  --alert-radius:          var(--radius-md);
+  --alert-padding:         var(--space-4) var(--space-5);
+  --alert-icon-size:       40px;
+  --alert-info-bg:         var(--state-info-bg);
+  --alert-info-icon-bg:    var(--color-info-500);
+  --alert-info-icon-fg:    var(--text-inverse);
+  --alert-info-text:       var(--state-info-fg);
+  --alert-success-bg:      var(--state-success-bg);
+  --alert-success-icon-bg: var(--state-success-solid);
+  --alert-success-icon-fg: var(--text-inverse);
+  --alert-success-text:    var(--state-success-fg);
+  --alert-warning-bg:      var(--state-warning-bg);
+  --alert-warning-icon-bg: var(--state-warning-solid);
+  --alert-warning-icon-fg: var(--text-inverse);
+  --alert-warning-text:    var(--state-warning-fg);
+  --alert-error-bg:        var(--state-error-bg);
+  --alert-error-icon-bg:   var(--state-error-solid);
+  --alert-error-icon-fg:   var(--text-inverse);
+  --alert-error-text:      var(--state-error-fg);
+
+  /* --- Progress --- */
+  --progress-h:        8px;
+  --progress-bg:       var(--bg-emphasized);
+  --progress-fg:       var(--action-primary);
+  --progress-radius:   var(--radius-pill);
+
+  /* ============================================================
+   * Card Family
+   * ============================================================ */
+
+  /* --- Step Card --- */
+  --stepcard-bg:           var(--bg-canvas);
+  --stepcard-border:       var(--border-subtle);
+  --stepcard-border-hover: var(--border-accent);
+  --stepcard-shadow:       var(--shadow-sm);
+  --stepcard-shadow-hover: var(--shadow-lg);
+  --stepcard-radius:       var(--radius-xl);
+  --stepcard-padding:      var(--space-6);
+  --stepcard-num-bg:       var(--action-cta);
+  --stepcard-num-text:     var(--text-inverse);
+  --stepcard-num-size:     40px;
+  --stepcard-title-color:  var(--text-brand);
+  --stepcard-body-color:   var(--text-secondary);
+
+  /* --- Feature Card --- */
+  --featurecard-bg:           var(--bg-canvas);
+  --featurecard-border:       var(--border-subtle);
+  --featurecard-shadow-hover: var(--shadow-md);
+  --featurecard-radius:       var(--radius-xl);
+  --featurecard-title-color:  var(--text-brand);
+  --featurecard-link-color:   var(--text-accent);
+
+  /* --- Issue Card --- */
+  --issuecard-bg:        var(--bg-canvas);
+  --issuecard-border:    var(--border-subtle);
+  --issuecard-radius:    var(--radius-xl);
+  --issuecard-padding:   var(--space-6);
+  --issuecard-icon-bg:   var(--color-error-500);
+  --issuecard-icon-text: var(--text-inverse);
+  --issuecard-bullet:    var(--action-cta);
+
+  /* --- Stat Card --- */
+  --statcard-bg:               var(--bg-canvas);
+  --statcard-border:           var(--border-subtle);
+  --statcard-radius:           var(--radius-xl);
+  --statcard-padding:          var(--space-6);
+  --statcard-label-color:      var(--text-tertiary);
+  --statcard-value-color:      var(--text-brand-emphasized);
+  --statcard-trend-up-color:   var(--color-success-700);
+  --statcard-trend-down-color: var(--color-error-700);
+
+  /* ============================================================
+   * Navigation
+   * ============================================================ */
+
+  /* --- Breadcrumb --- */
+  --breadcrumb-text:         var(--text-secondary);
+  --breadcrumb-text-current: var(--text-primary);
+  --breadcrumb-separator:    var(--text-tertiary);
+  --breadcrumb-gap:          var(--space-2);
+
+  /* --- Pagination --- */
+  --pagination-item-size:         40px;
+  --pagination-item-bg:           transparent;
+  --pagination-item-bg-hover:     var(--bg-muted);
+  --pagination-item-bg-current:   var(--action-primary);
+  --pagination-item-text:         var(--text-secondary);
+  --pagination-item-text-current: var(--text-inverse);
+  --pagination-item-radius:       var(--radius-md);
+
+  /* --- Tabs --- */
+  --tabs-border-bottom:     var(--border-subtle);
+  --tabs-item-padding:      var(--space-3) var(--space-4);
+  --tabs-item-text:         var(--text-secondary);
+  --tabs-item-text-active:  var(--text-brand);
+  --tabs-item-text-hover:   var(--text-primary);
+  --tabs-indicator-bg:      var(--action-cta);
+  --tabs-indicator-h:       3px;
+  --tabs-indicator-radius:  var(--radius-pill);
+
+  /* ============================================================
+   * Overlay
+   * ============================================================ */
+
+  /* --- Modal --- */
+  --modal-bg:           var(--bg-canvas);
+  --modal-overlay:      var(--bg-overlay);
+  --modal-radius:       var(--radius-xl);
+  --modal-padding:      var(--space-8);
+  --modal-shadow:       var(--shadow-2xl);
+  --modal-max-w:        560px;
+
+  /* --- Toast --- */
+  --toast-bg:           var(--bg-canvas);
+  --toast-radius:       var(--radius-lg);
+  --toast-padding:      var(--space-4) var(--space-5);
+  --toast-shadow:       var(--shadow-lg);
+  --toast-min-w:        320px;
+  --toast-max-w:        420px;
+
+  /* ============================================================
+   * Special
+   * ============================================================ */
+
+  /* --- Hero --- */
+  --hero-bg:              var(--bg-canvas);
+  --hero-bg-glow-peach:   rgba(248, 123, 87, 0.18);
+  --hero-bg-glow-teal:    rgba(30, 95, 191, 0.12);
+  --hero-radius:          var(--radius-2xl);
+  --hero-padding-y:       var(--space-20);
+  --hero-padding-x:       var(--space-12);
+  --hero-title-color:     var(--color-teal-900);
+  --hero-emphasis-color:  var(--action-cta);
+  --hero-emphasis-bg:     var(--color-peach-50);
+
+  /* --- Table --- */
+  --table-bg:           var(--bg-canvas);
+  --table-border:       var(--border-subtle);
+  --table-header-bg:    var(--bg-muted);
+  --table-header-text:  var(--text-primary);
+  --table-row-bg-hover: var(--bg-subtle);
+  --table-cell-padding: var(--space-3) var(--space-4);
+  --table-radius:       var(--radius-lg);
+
+  /* ============================================================
+   * Additional Form Components
+   * ============================================================ */
+
+  /* --- Search Bar --- */
+  --searchbar-bg:       var(--bg-canvas);
+  --searchbar-border:   var(--border-default);
+  --searchbar-radius:   var(--radius-md);
+  --searchbar-padding:  var(--space-3) var(--space-5);
+  --searchbar-icon:     var(--text-tertiary);
+
+  /* --- File Upload --- */
+  --upload-bg:           var(--bg-subtle);
+  --upload-bg-hover:     var(--bg-brand);
+  --upload-border:       var(--border-default);
+  --upload-border-hover: var(--color-teal-400);
+  --upload-radius:       var(--radius-lg);
+  --upload-padding:      var(--space-8);
+
+  /* --- Date Picker --- */
+  --datepicker-bg:            var(--bg-canvas);
+  --datepicker-border:        var(--border-default);
+  --datepicker-day-size:      36px;
+  --datepicker-day-bg-active: var(--action-primary);
+
+  /* --- OTP Input --- */
+  --otp-size:           48px;
+  --otp-bg:             var(--bg-canvas);
+  --otp-border:         var(--border-default);
+  --otp-border-focus:   var(--action-primary);
+  --otp-radius:         var(--radius-md);
+  --otp-font-size:      var(--fs-xl);
+
+  /* ============================================================
+   * Additional Information
+   * ============================================================ */
+
+  /* --- Skeleton --- */
+  --skeleton-bg:        var(--bg-emphasized);
+  --skeleton-bg-shine:  var(--bg-muted);
+  --skeleton-radius:    var(--radius-sm);
+
+  /* --- Empty State --- */
+  --empty-icon-bg:      var(--bg-emphasized);
+  --empty-icon-color:   var(--text-tertiary);
+
+  /* --- Code Block --- */
+  --code-bg:            var(--color-warm-900);
+  --code-text:          var(--color-warm-100);
+  --code-comment:       var(--color-warm-400);
+  --code-keyword:       var(--color-peach-300);
+  --code-string:        var(--color-sunshine-300);
+  --code-radius:        var(--radius-md);
+  --code-padding:       var(--space-4) var(--space-5);
+
+  /* --- Divider --- */
+  --divider-color:      var(--border-subtle);
+  --divider-text-color: var(--text-tertiary);
+
+  /* --- Metric --- */
+  --metric-label-color: var(--text-tertiary);
+  --metric-value-color: var(--text-primary);
+
+  /* ============================================================
+   * Additional Navigation
+   * ============================================================ */
+
+  /* --- Stepper --- */
+  --stepper-circle-size:  32px;
+  --stepper-bg-default:   var(--bg-emphasized);
+  --stepper-bg-active:    var(--action-primary);
+  --stepper-bg-complete:  var(--state-success-solid);
+  --stepper-text-default: var(--text-tertiary);
+  --stepper-text-active:  var(--text-inverse);
+  --stepper-line-color:   var(--border-default);
+  --stepper-line-active:  var(--state-success-solid);
+
+  /* --- Menu --- */
+  --menu-bg:                   var(--bg-canvas);
+  --menu-shadow:               var(--shadow-lg);
+  --menu-radius:               var(--radius-md);
+  --menu-padding:              var(--space-2);
+  --menu-item-padding:         var(--space-2) var(--space-3);
+  --menu-item-radius:          var(--radius-sm);
+  --menu-item-bg-hover:        var(--bg-muted);
+  --menu-item-bg-danger-hover: var(--state-error-bg);
+  --menu-item-text-danger:     var(--state-error-fg);
+  --menu-divider:              var(--border-subtle);
+
+  /* ============================================================
+   * Additional Layout
+   * ============================================================ */
+
+  /* --- Accordion --- */
+  --accordion-border:   var(--border-subtle);
+  --accordion-bg-hover: var(--bg-subtle);
+  --accordion-padding:  var(--space-4) var(--space-5);
+
+  /* --- Banner --- */
+  --banner-bg:        var(--color-teal-900);
+  --banner-text:      var(--color-teal-100);
+  --banner-padding:   var(--space-3) var(--space-5);
+
+  /* ============================================================
+   * Additional Components
+   * ============================================================ */
+
+  /* --- Number Stepper --- */
+  --numstep-btn-size:     32px;
+  --numstep-btn-bg:       var(--bg-muted);
+  --numstep-btn-bg-hover: var(--bg-emphasized);
+  --numstep-input-w:      56px;
+
+  /* --- Toggle Group (Segmented) --- */
+  --toggle-bg:                 var(--bg-muted);
+  --toggle-radius:             var(--radius-md);
+  --toggle-padding:            3px;
+  --toggle-item-padding:       6px 14px;
+  --toggle-item-bg-active:     var(--bg-canvas);
+  --toggle-item-shadow-active: var(--shadow-xs);
+
+  /* --- KBD (Keyboard) --- */
+  --kbd-bg:           var(--bg-muted);
+  --kbd-text:         var(--text-primary);
+  --kbd-border:       var(--border-default);
+  --kbd-radius:       var(--radius-xs);
+  --kbd-padding:      2px 6px;
+  --kbd-font-size:    11px;
+
+  /* --- Rating --- */
+  --rating-color:        var(--color-sunshine-500);
+  --rating-color-empty:  var(--border-default);
+
+  /* --- Spinner --- */
+  --spinner-size:        20px;
+  --spinner-track:       var(--border-subtle);
+  --spinner-fg:          var(--action-primary);
+  --spinner-thickness:   2px;
+
+  /* --- Popover --- */
+  --popover-bg:          var(--bg-canvas);
+  --popover-border:      var(--border-subtle);
+  --popover-shadow:      var(--shadow-lg);
+  --popover-radius:      var(--radius-md);
+  --popover-padding:     var(--space-4);
+
+  /* --- Card (Basic) --- */
+  --card-bg:             var(--bg-canvas);
+  --card-border:         var(--border-subtle);
+  --card-radius:         var(--radius-lg);
+  --card-padding:        var(--space-5);
+  --card-shadow-hover:   var(--shadow-sm);
+
+  /* --- List Item --- */
+  --listitem-padding:        var(--space-3) var(--space-4);
+  --listitem-bg-hover:       var(--bg-subtle);
+  --listitem-divider:        var(--border-subtle);
+
+  /* --- Callout --- */
+  --callout-radius:      var(--radius-md);
+  --callout-padding:     var(--space-4);
+  --callout-bg:          var(--bg-brand);
+  --callout-border:      var(--border-brand);
+  --callout-icon-color:  var(--text-brand);
+
+  /* ============================================================
+   * Additional Components
+   * ============================================================ */
+
+  /* --- Button Group --- */
+  --btngroup-radius:     var(--radius-md);
+  --btngroup-bg:         var(--bg-canvas);
+  --btngroup-border:     var(--border-default);
+  --btngroup-divider:    var(--border-subtle);
+
+  /* --- Status Dot --- */
+  --statusdot-size:      8px;
+
+  /* --- Chip --- */
+  --chip-bg:             var(--bg-muted);
+  --chip-bg-active:      var(--color-teal-100);
+  --chip-text:           var(--text-secondary);
+  --chip-text-active:    var(--color-teal-700);
+  --chip-padding:        4px 12px;
+  --chip-radius:         var(--radius-sm);
+
+  /* --- Timeline --- */
+  --timeline-line-color:  var(--border-default);
+  --timeline-dot-size:    12px;
+  --timeline-dot-bg:      var(--action-primary);
+  --timeline-dot-bg-done: var(--state-success-solid);
+
+  /* --- Inline Loader --- */
+  --loader-bar-height:   3px;
+  --loader-bar-color:    var(--action-primary);
+
+  /* --- Stat Group --- */
+  --statgroup-bg:        var(--bg-canvas);
+  --statgroup-border:    var(--border-subtle);
+  --statgroup-divider:   var(--border-subtle);
+
+  /* --- Definition List --- */
+  --dl-divider:          var(--border-subtle);
+  --dl-label-color:      var(--text-tertiary);
+
+  /* --- Quote --- */
+  --quote-bar-color:     var(--color-peach-500);
+  --quote-text-color:    var(--text-primary);
+
+  /* --- Aside Panel --- */
+  --aside-bg:            var(--bg-subtle);
+  --aside-border:        var(--border-subtle);
+  --aside-padding:       var(--space-5);
+
+  /* --- Notification Bell --- */
+  --bell-badge-bg:       var(--state-error-solid);
+  --bell-badge-text:     var(--text-inverse);
+
+  /* ============================================================
+   * Additional Components
+   * ============================================================ */
+
+  /* --- Combobox --- */
+  --combo-bg:             var(--bg-canvas);
+  --combo-border:         var(--border-default);
+  --combo-radius:         var(--radius-md);
+  --combo-list-bg:        var(--bg-canvas);
+  --combo-list-shadow:    var(--shadow-lg);
+  --combo-item-padding:   8px 12px;
+  --combo-item-bg-hover:  var(--bg-muted);
+  --combo-item-bg-active: var(--bg-brand);
+
+  /* --- Range Slider --- */
+  --range-track-bg:     var(--border-default);
+  --range-track-fill:   var(--action-primary);
+  --range-thumb-bg:     var(--bg-canvas);
+  --range-thumb-border: var(--action-primary);
+
+  /* --- Vertical Steps --- */
+  --vsteps-line-color:    var(--border-default);
+  --vsteps-dot-size:      24px;
+  --vsteps-dot-bg:        var(--bg-canvas);
+  --vsteps-dot-border:    var(--border-default);
+  --vsteps-dot-bg-active: var(--action-primary);
+  --vsteps-dot-bg-done:   var(--state-success-solid);
+
+  /* --- Color Picker --- */
+  --colorpicker-radius: var(--radius-md);
+  --colorpicker-bg:     var(--bg-canvas);
+  --colorpicker-border: var(--border-subtle);
+
+  /* ============================================================
+   * Layout
+   * ============================================================ */
+  --container-max:     1100px;
+  --container-padding: var(--space-6);
+  --section-padding-y: var(--space-24);
+  --section-gap:       var(--space-32);
+  --nav-bg:            var(--bg-canvas);
+  --nav-border:        var(--border-subtle);
+  --nav-link-color:    var(--text-secondary);
+  --nav-link-hover:    var(--text-brand);
+  --footer-bg:         var(--color-teal-900);
+  --footer-text:       var(--color-teal-100);
+  --footer-link:       var(--color-warm-0);
+  --footer-border:     rgba(255, 255, 255, 0.1);
+}
+
+/* ================================================================
+ * DARK THEME OVERRIDES
+ * Activated via [data-theme="dark"] on <html>
+ * ================================================================ */
+[data-theme="dark"] {
+  /* === Surface (background) === */
+  --bg-canvas:        #16191D;
+  --bg-subtle:        #1B1F24;
+  --bg-muted:         #21262C;
+  --bg-emphasized:    #2A2F36;
+  --bg-brand:         rgba(30, 95, 191, 0.16);
+  --bg-warm:          rgba(248, 123, 87, 0.12);
+
+  /* === Text === */
+  --text-primary:     #E9ECEF;
+  --text-secondary:   #B5BAC1;
+  --text-tertiary:    #868D95;
+  --text-disabled:    #4F555D;
+  /* text-inverse: 塗り色（ボタン・バッジ・トースト）の上に乗せる文字色。
+     ライト・ダークどちらでも読める白側に倒す。 */
+  --text-inverse:     #FFFFFF;
+  --text-brand:       #94B4E8;
+  --text-accent:      #FFA081;
+
+  /* === Border === */
+  --border-subtle:    #2A2F36;
+  --border-default:   #3A4047;
+  --border-strong:    #4F555D;
+  --border-brand:     #5A89D6;
+  --border-accent:    #F87B57;
+  --border-disabled:  #2A2F36;
+
+  /* === Action / Button === */
+  --action-primary:        #3F71C7;
+  --action-primary-hover:  #5A89D6;
+  --action-primary-active: #1E5FBF;
+  --action-cta:            #FF9472;
+  --action-cta-hover:      #FFA081;
+  --action-cta-active:     #F87B57;
+  --action-disabled-bg:    #2A2F36;
+  --action-disabled-text:  #4F555D;
+
+  /* === State === */
+  --state-info-bg:        rgba(30, 95, 191, 0.16);
+  --state-info-fg:        #94B4E8;
+  --state-info-border:    #1E5FBF;
+  --state-info-solid:     #5A89D6;
+  --state-success-bg:     rgba(93, 187, 126, 0.16);
+  --state-success-fg:     #7FCB99;
+  --state-success-border: #5DBB7E;
+  --state-success-solid:  #5DBB7E;
+  --state-warning-bg:     rgba(240, 169, 51, 0.16);
+  --state-warning-fg:     #FFD66B;
+  --state-warning-border: #F0A933;
+  --state-warning-solid:  #F0A933;
+  --state-error-bg:       rgba(227, 99, 99, 0.16);
+  --state-error-fg:       #F08585;
+  --state-error-border:   #E36363;
+  --state-error-solid:    #E36363;
+
+  /* === Component-specific overrides === */
+  --btn-cta-shadow:        0 4px 12px rgba(248, 123, 87, 0.25);
+  --btn-cta-shadow-hover:  0 6px 16px rgba(248, 123, 87, 0.35);
+  --shadow-xs:             0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm:             0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md:             0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg:             0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-xl:             0 12px 36px rgba(0, 0, 0, 0.7);
+  --modal-overlay:         rgba(0, 0, 0, 0.7);
+
+  --check-bg:           var(--bg-emphasized);
+  --check-mark-color:   var(--text-inverse);
+  --switch-track-bg:    var(--bg-emphasized);
+  --switch-thumb-bg:    var(--text-primary);
+
+  --code-bg:            #0D1014;
+  --code-text:          #E9ECEF;
+
+  --hero-bg:            #1B1F24;
+  --hero-bg-glow-peach: rgba(248, 123, 87, 0.12);
+  --hero-bg-glow-teal:  rgba(30, 95, 191, 0.16);
+
+  --tooltip-bg:         #2A2F36;
+  --tooltip-text:       #E9ECEF;
+
+  --kbd-border:         #3A4047;
+
+  --skeleton-bg:        #21262C;
+  --skeleton-bg-shine:  #2A2F36;
+
+  --footer-bg:          #0D1014;
+
+  /* === Surface / Banner overrides for dark visibility === */
+  /* Banner: light Blue surface with primary text instead of inverted darknavy */
+  --banner-bg:           #1B2A4E;
+  --banner-text:         #C9D7F4;
+  /* Hero title: was Blue-900 (almost black) — switch to bright primary text */
+  --hero-title-color:    var(--text-primary);
+  /* Avatar / chip emphasized backgrounds: more solid for legibility */
+  --avatar-bg:           #2A3654;
+  --chip-bg-active:      #2A3654;
+  --chip-text-active:    #94B4E8;
+  --bg-brand-emphasized: #2A3654;
+
+  /* Color-mapped tokens (palettes referenced by warm/cool) */
+  --color-warm-0:       #16191D;
+  --color-warm-25:      #1B1F24;
+  --color-warm-50:      #21262C;
+  --color-warm-100:     #2A2F36;
+  --color-warm-700:     #B5BAC1;
+  --color-warm-800:     #E9ECEF;
+
+  --color-teal-100:     rgba(30, 95, 191, 0.20);
+  --color-peach-100:    rgba(248, 123, 87, 0.20);
+  --color-sunshine-100: rgba(255, 203, 71, 0.20);
+}
+
+/* ================================================================
+ * OKLCH Hybrid Layer
+ * ================================================================
+ * hover / active の派生色を OKLCH の relative color syntax で導出する。
+ *
+ *   hover  = ベースの明度 − 0.06   少し暗く
+ *   active = ベースの明度 − 0.12   はっきり暗く
+ *
+ * 明度シフトは知覚的に均一になる。
+ * ================================================================ */
+@supports (color: oklch(from #1E5FBF l c h)) {
+  :root {
+    /* Primary (Blue 500 base) */
+    --action-primary-hover:  oklch(from var(--action-primary) calc(l - 0.06) c h);
+    --action-primary-active: oklch(from var(--action-primary) calc(l - 0.12) c h);
+    /* CTA (Peach 700 base) */
+    --action-cta-hover:      oklch(from var(--action-cta) calc(l - 0.06) c h);
+    --action-cta-active:     oklch(from var(--action-cta) calc(l - 0.12) c h);
+    /* Danger (Error 700 base) */
+    --btn-danger-bg-hover:   oklch(from var(--btn-danger-bg) calc(l - 0.06) c h);
+    /* Link */
+    --text-link-hover:       oklch(from var(--text-link) calc(l - 0.08) c h);
+  }
+  [data-theme="dark"] {
+    /* ダークでは hover で明るくする。押した感じの方向を揃える。 */
+    --action-primary-hover:  oklch(from var(--action-primary) calc(l + 0.06) c h);
+    --action-primary-active: oklch(from var(--action-primary) calc(l + 0.12) c h);
+    --action-cta-hover:      oklch(from var(--action-cta) calc(l + 0.06) c h);
+    --action-cta-active:     oklch(from var(--action-cta) calc(l + 0.12) c h);
+    --btn-danger-bg-hover:   oklch(from var(--btn-danger-bg) calc(l + 0.06) c h);
+    --text-link-hover:       oklch(from var(--text-link) calc(l + 0.08) c h);
+  }
+}
+
+/* Smooth theme transition */
+html { transition: background-color 200ms ease; }
+body, .sidebar, .header, .story, .card, .featurecard, .stepcard, .issuecard, .statcard, .table-wrap, .modal, .toast, .menu, .popover, .accordion, .aside, .input, .textarea, .select, .upload, .datepicker {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+/* ================================================================
+ * Reduced Motion
+ * ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast:    0ms;
+    --dur-base:    0ms;
+    --dur-slow:    0ms;
+    --dur-slower:  0ms;
+  }
+  /* duration トークンを通さず直接 transition を書いている箇所も止める */
+  *, *::before, *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto !important;
+  }
+}
+
+/* ================================================================
+ * High Contrast (prefers-contrast: more)
+ * ================================================================ */
+@media (prefers-contrast: more) {
+  :root {
+    --border-default:   #000000;
+    --border-strong:    #000000;
+    --text-secondary:   var(--text-primary);
+    --text-tertiary:    var(--text-primary);
+  }
+  [data-theme="dark"] {
+    --border-default:   #FFFFFF;
+    --border-strong:    #FFFFFF;
+    --text-secondary:   var(--text-primary);
+    --text-tertiary:    var(--text-primary);
+  }
+  /* インタラクティブ要素の枠線を確実に出す */
+  button, .input, .textarea, .select, .check__box, .radio__circle {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* ================================================================
+ * Forced Colors（Windows ハイコントラスト）
+ * ================================================================ */
+@media (forced-colors: active) {
+  :root {
+    --focus-ring: 0 0 0 2px Highlight;
+  }
+  button, .btn-cta, .btn-primary, .btn-outline, .btn-ghost, .btn-danger {
+    forced-color-adjust: none;
+    border: 1px solid ButtonBorder;
+  }
+}
+
+/* ================================================================
+ * テキスト選択
+ * ================================================================ */
+::selection {
+  background: var(--action-primary);
+  color: #FFFFFF;
+}
+::-moz-selection {
+  background: var(--action-primary);
+  color: #FFFFFF;
+}
+
+/* ================================================================
+ * スクロールバー
+ * ================================================================ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-warm-300) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-warm-300);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-400);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+[data-theme="dark"] * {
+  scrollbar-color: #3A4047 transparent;
+}
+[data-theme="dark"] *::-webkit-scrollbar-thumb {
+  background: #3A4047;
+  background-clip: padding-box;
+}
+[data-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+  background: #4F555D;
+  background-clip: padding-box;
+}
+
+/* ================================================================
+ * 印刷
+ * ================================================================ */
+@media print {
+  /* 印刷時は UI を消す */
+  .sidebar, .topbar, .toast-container, .modal__overlay,
+  button, .btn-cta, .btn-primary, .btn-outline, .btn-ghost, .btn-danger {
+    display: none !important;
+  }
+  /* インクを節約するため白背景に */
+  html, body, .main {
+    background: white !important;
+    color: black !important;
+  }
+  /* ページ区切り */
+  section, .card, .featurecard, .stepcard {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  /* リンクの後ろに URL を出す */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555;
+  }
+}
